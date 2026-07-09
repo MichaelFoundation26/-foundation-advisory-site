@@ -1,1 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foundation Advisory | Where Stronger Businesses Begin</title>
 
+  <style>
+    :root {
+      --navy: #17233a;
+      --blue: #2f5f8f;
+      --red: #9b2f2f;
+      --cream: #f7f3ec;
+      --white: #ffffff;
+      --gray: #5f6673;
+      --dark: #1f2933;
+      --border: #ddd6c9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--dark);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 24px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 5px solid var(--red);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand img {
+      height: 58px;
+      width: auto;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-text p {
+      margin: 2px 0 0;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #d8dee9;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 24px;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 90px 8%;
+      background: linear-gradient(rgba(23, 35, 58, 0.88), rgba(23, 35, 58, 0.88)),
+        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 780px;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #f1d5d5;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+
+    .hero h2 {
+      font-size: 3.2rem;
+      line-height: 1.1;
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      font-family: Arial, sans-serif;
+      font-size: 1.2rem;
+      max-width: 680px;
+      color: #eef2f7;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      padding: 14px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #7f2525;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--navy);
+      font-size: 2.2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-family: Arial, sans-serif;
+      color: var(--gray);
+      font-size: 1.05rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--blue);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--navy);
+      font-size: 1.35rem;
+    }
+
+    .card p {
+      font-family: Arial, sans-serif;
+      color: var(--gray);
+    }
+
+    .about {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about h2 {
+      color: var(--navy);
+      font-size: 2.2rem;
+      margin-top: 0;
+    }
+
+    .about p {
+      font-family: Arial, sans-serif;
+      color: var(--gray);
+      font-size: 1.05rem;
+    }
+
+    .highlight-box {
+      background: var(--cream);
+      border-left: 6px solid var(--red);
+      padding: 28px;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      color: var(--navy);
+    }
+
+    .highlight-box ul {
+      font-family: Arial, sans-serif;
+      color: var(--gray);
+      padding-left: 20px;
+    }
+
+    .cta {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.4rem;
+      margin: 0 0 12px;
+    }
+
+    .cta p {
+      font-family: Arial, sans-serif;
+      color: #d8dee9;
+      max-width: 680px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      padding: 28px 8%;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 18px;
+      }
+
+      .hero h2 {
+        font-size: 2.4rem;
+      }
+
+      .cards,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .brand img {
+        height: 48px;
+      }
+
+      .hero {
+        padding: 70px 6%;
+      }
+
+      section {
+        padding: 56px 6%;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="Foundation Advisory logo" />
+      <div class="brand-text">
+        <h1>Foundation Advisory</h1>
+        <p>Where Stronger Businesses Begin</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">MSP Advisory • Governance • Cybersecurity • Compliance</div>
+      <h2>Helping MSPs build stronger, clearer, more resilient businesses.</h2>
+      <p>
+        Foundation Advisory helps managed service providers strengthen their operations through practical guidance in governance,
+        cybersecurity, compliance readiness, policy development, vendor decisions, and client-ready service strategy.
+      </p>
+      <a class="button" href="mailto:michael@foundationadvisory.group">Start a Conversation</a>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-title">
+      <h2>Practical advisory for growing MSPs</h2>
+      <p>
+        Your clients are asking better questions. Auditors, cyber insurers, and vendors are asking for stronger evidence.
+        Foundation Advisory helps you prepare with structure, clarity, and practical next steps.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Governance & Policy Development</h3>
+        <p>
+          Build and improve the policies, standards, and operating practices your MSP needs to mature with confidence.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Cybersecurity & Compliance Readiness</h3>
+        <p>
+          Align your business with practical security frameworks, SOC readiness needs, client questionnaires, and audit expectations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>MSP Service Strategy</h3>
+        <p>
+          Package stronger advisory, security, vendor, and technology services so your clients see more value and your business becomes more durable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-grid">
+      <div>
+        <h2>Built on real MSP, audit, and IT leadership experience.</h2>
+        <p>
+          Foundation Advisory exists to help MSPs move beyond reactive service delivery and build stronger foundations for governance,
+          security, compliance, and client trust.
+        </p>
+        <p>
+          Led by Michael Stocklin, Foundation Advisory brings practical experience across managed services, IT audit,
+          banking technology leadership, cybersecurity programs, vendor oversight, and policy development.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Areas of focus</h3>
+        <ul>
+          <li>Policy and governance development</li>
+          <li>Cybersecurity framework alignment</li>
+          <li>SOC readiness support</li>
+          <li>Vendor and technology guidance</li>
+          <li>Client-facing advisory service design</li>
+          <li>MSP operational maturity</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Designed for MSPs that need clarity.</h2>
+      <p>
+        Whether you are preparing for customer scrutiny, improving internal structure, responding to compliance requests,
+        or building a more mature service model, Foundation Advisory helps you take the next faithful step with wisdom and discipline.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Stabilize</h3>
+        <p>
+          For smaller MSPs that need regular help with governance, security habits, policies, and compliance planning.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Strengthen</h3>
+        <p>
+          For MSPs improving maturity, tracking a roadmap, answering questionnaires, and preparing for greater client scrutiny.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Scale</h3>
+        <p>
+          For MSPs that want deeper advisory support, framework alignment, and help building client-facing advisory services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <h2>Ready to build a stronger foundation?</h2>
+    <p>
+      Let’s talk about where your MSP is today, what your clients are asking for, and what practical steps will help you move forward.
+    </p>
+    <a class="button" href="mailto:michael@foundationadvisory.group">Email Michael</a>
+  </section>
+
+  <footer>
+    © 2026 Foundation Advisory. All rights reserved. |
+    <a href="mailto:michael@foundationadvisory.group">michael@foundationadvisory.group</a>
+  </footer>
+
+</body>
+</html>
