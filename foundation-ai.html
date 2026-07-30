@@ -51,21 +51,23 @@
       margin: 0 auto;
     }
 
+    /* Header */
+
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(23, 35, 58, 0.97);
-      border-bottom: 4px solid var(--red);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 3px solid var(--red);
+      box-shadow: 0 4px 18px rgba(23, 35, 58, 0.1);
     }
 
     .header-inner {
-      min-height: 104px;
+      min-height: 120px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 32px;
     }
 
     .brand-logo {
@@ -77,7 +79,7 @@
 
     .brand-logo img {
       display: block;
-      width: 270px;
+      width: 360px;
       height: auto;
       max-width: 100%;
       padding: 12px 0;
@@ -92,14 +94,17 @@
     }
 
     .nav a {
-      color: var(--white);
+      color: var(--navy);
       text-decoration: none;
       font-size: 0.94rem;
-      opacity: 0.95;
+      font-weight: 600;
+      opacity: 0.9;
+      transition: color 0.2s ease, opacity 0.2s ease;
     }
 
     .nav a:hover,
     .nav a[aria-current="page"] {
+      color: var(--red);
       opacity: 1;
     }
 
@@ -108,11 +113,20 @@
     }
 
     .nav-cta {
-      padding: 10px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 10px 18px;
+      border: 1px solid var(--red);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
+      background: var(--red);
+      color: var(--white) !important;
     }
+
+    .nav-cta:hover {
+      background: var(--red-dark);
+      border-color: var(--red-dark);
+      color: var(--white) !important;
+    }
+
+    /* Hero */
 
     .page-hero {
       color: var(--white);
@@ -156,6 +170,8 @@
       line-height: 1.75;
       color: #e8edf4;
     }
+
+    /* Buttons */
 
     .button-row {
       display: flex;
@@ -208,8 +224,16 @@
       background: var(--navy);
     }
 
+    /* General Sections */
+
     section {
       padding: 84px 0;
+    }
+
+    .band-light {
+      background: var(--cream-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .section-title {
@@ -250,11 +274,21 @@
     .partner-box li,
     .audience-list li,
     .why-list li,
+    .highlight-box li,
     .cta p {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--gray);
       font-size: 1.02rem;
       line-height: 1.8;
+    }
+
+    /* Layouts */
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 34px;
+      align-items: start;
     }
 
     .feature-grid,
@@ -264,13 +298,6 @@
       gap: 24px;
     }
 
-    .split-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 34px;
-      align-items: start;
-    }
-
     .audience-grid,
     .why-grid {
       display: grid;
@@ -278,6 +305,8 @@
       gap: 34px;
       align-items: start;
     }
+
+    /* Cards */
 
     .highlight-box,
     .feature-card,
@@ -316,12 +345,6 @@
       line-height: 1.8;
     }
 
-    .band-light {
-      background: var(--cream-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
     .feature-card,
     .process-card {
       border-top: 5px solid var(--blue);
@@ -341,6 +364,8 @@
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 700;
     }
+
+    /* MSP Partner Section */
 
     .partner-box {
       background: linear-gradient(135deg, var(--navy), var(--navy-2));
@@ -368,6 +393,8 @@
       color: var(--navy);
     }
 
+    /* CTA */
+
     .cta {
       background: linear-gradient(
         135deg,
@@ -390,6 +417,8 @@
       margin: 0 auto 28px;
     }
 
+    /* Footer */
+
     .site-footer {
       background: #111827;
       color: #d1d5db;
@@ -410,15 +439,23 @@
       text-decoration: none;
     }
 
+    /* Tablet */
+
     @media (max-width: 960px) {
       .header-inner {
+        min-height: auto;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 16px 0;
+        align-items: center;
+        padding: 14px 0 18px;
       }
 
       .brand-logo img {
-        width: 240px;
+        width: 320px;
+        padding: 6px 0;
+      }
+
+      .nav {
+        justify-content: center;
       }
 
       .feature-grid,
@@ -430,18 +467,29 @@
       }
     }
 
+    /* Mobile */
+
     @media (max-width: 520px) {
       .container {
         width: min(100% - 32px, var(--max-width));
       }
 
       .brand-logo img {
-        width: 215px;
-        padding: 8px 0;
+        width: 260px;
+        padding: 4px 0;
       }
 
       .nav {
-        gap: 14px 18px;
+        justify-content: center;
+        gap: 12px 16px;
+      }
+
+      .nav a {
+        font-size: 0.88rem;
+      }
+
+      .nav-cta {
+        padding: 8px 14px;
       }
 
       .hero-inner {
@@ -471,25 +519,43 @@
         href="index.html"
         aria-label="Foundation Advisory home"
       >
-        <img src="logo.png" alt="Foundation Advisory" />
+        <img
+          src="logo2.png"
+          alt="Foundation Advisory"
+        />
       </a>
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="index.html#services">Services</a>
         <a href="index.html#engagements">Engagements</a>
-        <a href="foundation-ai.html" aria-current="page">
+
+        <a
+          href="foundation-ai.html"
+          aria-current="page"
+        >
           Foundation AI
         </a>
+
         <a href="index.html#about">About</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+
+        <a
+          href="#contact"
+          class="nav-cta"
+        >
+          Contact
+        </a>
       </nav>
     </div>
   </header>
 
   <main id="top">
+
     <section class="page-hero">
       <div class="container hero-inner">
-        <div class="eyebrow">Foundation AI</div>
+
+        <div class="eyebrow">
+          Foundation AI
+        </div>
 
         <h1>
           Adopt artificial intelligence securely, responsibly, and with confidence.
@@ -510,17 +576,24 @@
             Start an AI Readiness Conversation
           </a>
 
-          <a class="button button-secondary" href="#msp-partners">
+          <a
+            class="button button-secondary"
+            href="#msp-partners"
+          >
             Explore MSP Partnerships
           </a>
         </div>
+
       </div>
     </section>
 
     <section>
       <div class="container split-grid">
+
         <div class="split-copy">
-          <div class="section-kicker">The Challenge</div>
+          <div class="section-kicker">
+            The Challenge
+          </div>
 
           <h2>
             AI adoption is moving faster than most organizations’ policies and controls.
@@ -551,26 +624,35 @@
 
           <ul>
             <li>Which AI tools are employees already using?</li>
+
             <li>
               What information should never be entered into public AI systems?
             </li>
+
             <li>
               Which tools should be approved, restricted, or prohibited?
             </li>
+
             <li>
               Who is accountable for reviewing AI risk and adoption?
             </li>
+
             <li>
               How should AI-generated work be reviewed and validated?
             </li>
-            <li>What should leadership prioritize next?</li>
+
+            <li>
+              What should leadership prioritize next?
+            </li>
           </ul>
         </aside>
+
       </div>
     </section>
 
     <section class="band-light">
       <div class="container">
+
         <div class="section-title centered">
           <div class="section-kicker">
             What Foundation AI Provides
@@ -587,6 +669,7 @@
         </div>
 
         <div class="feature-grid">
+
           <article class="feature-card">
             <div class="feature-icon">1</div>
 
@@ -605,8 +688,7 @@
 
             <p>
               Establish clear expectations for acceptable use, prohibited data,
-              human review, accountability, and responsible use across the
-              organization.
+              human review, accountability, and responsible use across the organization.
             </p>
           </article>
 
@@ -629,8 +711,7 @@
 
             <p>
               Evaluate AI-enabled vendors and platforms with practical questions
-              about data use, retention, access, model training, and contractual
-              terms.
+              about data use, retention, access, model training, and contractual terms.
             </p>
           </article>
 
@@ -652,22 +733,25 @@
 
             <p>
               Maintain momentum through policy updates, vendor evaluations,
-              executive guidance, governance reviews, and support for new use
-              cases.
+              executive guidance, governance reviews, and support for new use cases.
             </p>
           </article>
+
         </div>
       </div>
     </section>
 
     <section id="ai-essentials">
       <div class="container split-grid">
+
         <div class="split-copy">
           <div class="section-kicker">
             A Practical Starting Point
           </div>
 
-          <h2>AI Essentials</h2>
+          <h2>
+            AI Essentials
+          </h2>
 
           <p>
             AI Essentials is designed for organizations beginning to formalize
@@ -695,11 +779,13 @@
             <li>Recommended next steps and roadmap</li>
           </ul>
         </aside>
+
       </div>
     </section>
 
     <section class="band-light">
       <div class="container">
+
         <div class="section-title">
           <div class="section-kicker">
             How the Engagement Works
@@ -716,6 +802,7 @@
         </div>
 
         <div class="process-grid">
+
           <article class="process-card">
             <div class="step">1</div>
 
@@ -723,8 +810,7 @@
 
             <p>
               Meet with leadership to understand business goals, current AI
-              use, sensitive information, existing tools, concerns, and desired
-              outcomes.
+              use, sensitive information, existing tools, concerns, and desired outcomes.
             </p>
           </article>
 
@@ -735,8 +821,7 @@
 
             <p>
               Review the organization’s current posture, identify material
-              risks, and develop right-sized governance and adoption
-              recommendations.
+              risks, and develop right-sized governance and adoption recommendations.
             </p>
           </article>
 
@@ -750,12 +835,14 @@
               standards, an executive summary, and a clear path forward.
             </p>
           </article>
+
         </div>
       </div>
     </section>
 
     <section>
       <div class="container audience-grid">
+
         <div>
           <div class="section-title">
             <div class="section-kicker">
@@ -763,8 +850,7 @@
             </div>
 
             <h2>
-              Built for organizations that want the benefits of AI without
-              unmanaged risk.
+              Built for organizations that want the benefits of AI without unmanaged risk.
             </h2>
           </div>
         </div>
@@ -774,32 +860,37 @@
             <li>
               MSPs building AI governance and advisory services for clients
             </li>
+
             <li>
               Small and midsized businesses beginning to use AI tools
             </li>
+
             <li>
-              Organizations handling confidential, regulated, or customer
-              information
+              Organizations handling confidential, regulated, or customer information
             </li>
+
             <li>
               Executives who need clear policies before expanding AI adoption
             </li>
+
             <li>
-              Teams evaluating Microsoft Copilot, ChatGPT, Claude, or other AI
-              platforms
+              Teams evaluating Microsoft Copilot, ChatGPT, Claude, or other AI platforms
             </li>
+
             <li>
-              Organizations that need ongoing guidance as tools and risks
-              evolve
+              Organizations that need ongoing guidance as tools and risks evolve
             </li>
           </ul>
         </div>
+
       </div>
     </section>
 
     <section class="band-light" id="msp-partners">
       <div class="container">
+
         <div class="partner-box">
+
           <div
             class="section-kicker"
             style="color: #f1d5d5;"
@@ -808,8 +899,7 @@
           </div>
 
           <h3>
-            Add AI governance to your service portfolio without building the
-            practice alone.
+            Add AI governance to your service portfolio without building the practice alone.
           </h3>
 
           <p>
@@ -821,23 +911,31 @@
           </p>
 
           <ul>
-            <li>Expand your advisory and governance offerings</li>
-            <li>Create new project and recurring revenue opportunities</li>
             <li>
-              Support clients without hiring a full-time AI governance
-              specialist
+              Expand your advisory and governance offerings
             </li>
+
             <li>
-              Strengthen client trust through clear roles and professional
-              deliverables
+              Create new project and recurring revenue opportunities
             </li>
+
             <li>
-              Build a repeatable approach to AI readiness and policy
-              development
+              Support clients without hiring a full-time AI governance specialist
+            </li>
+
+            <li>
+              Strengthen client trust through clear roles and professional deliverables
+            </li>
+
+            <li>
+              Build a repeatable approach to AI readiness and policy development
             </li>
           </ul>
 
-          <div class="button-row" style="margin-top: 24px;">
+          <div
+            class="button-row"
+            style="margin-top: 24px;"
+          >
             <a
               class="button button-primary"
               href="mailto:michael@foundationadvisory.group?subject=Foundation%20AI%20MSP%20Partnership"
@@ -852,12 +950,14 @@
               View All Engagements
             </a>
           </div>
+
         </div>
       </div>
     </section>
 
     <section>
       <div class="container why-grid">
+
         <div>
           <div class="section-title">
             <div class="section-kicker">
@@ -883,26 +983,31 @@
               Practical guidance grounded in security, compliance, governance,
               and business operations
             </li>
+
             <li>
               Right-sized documentation designed for real-world use
             </li>
+
             <li>
-              Clear executive communication without unnecessary technical
-              complexity
+              Clear executive communication without unnecessary technical complexity
             </li>
+
             <li>
               Support for both organizational leaders and MSP service providers
             </li>
+
             <li>
               A repeatable path from readiness to governance and ongoing advisory
             </li>
           </ul>
         </div>
+
       </div>
     </section>
 
     <section id="contact" class="cta">
       <div class="container">
+
         <h2>
           Ready to establish a responsible foundation for AI?
         </h2>
@@ -912,7 +1017,10 @@
           using AI, where the risks may be, and the most practical next step.
         </p>
 
-        <div class="button-row" style="justify-content: center;">
+        <div
+          class="button-row"
+          style="justify-content: center;"
+        >
           <a
             class="button button-primary"
             href="mailto:michael@foundationadvisory.group?subject=Foundation%20AI%20Conversation"
@@ -920,16 +1028,22 @@
             Email Michael
           </a>
 
-          <a class="button button-secondary" href="index.html">
+          <a
+            class="button button-secondary"
+            href="index.html"
+          >
             Return to Foundation Advisory
           </a>
         </div>
+
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
+
       <div>
         © 2026 Foundation Advisory. All rights reserved.
       </div>
@@ -939,6 +1053,7 @@
           michael@foundationadvisory.group
         </a>
       </div>
+
     </div>
   </footer>
 </body>
